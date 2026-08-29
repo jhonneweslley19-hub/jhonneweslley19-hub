@@ -10,10 +10,10 @@ Uso:
 """
 import argparse
 import sys
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageFilter, ImageEnhance
 
-GRID_COLS = 130  # colunas da grade — mais colunas = retrato mais nítido/detalhado
-CELL = 7  # tamanho de cada célula em px no SVG final
+GRID_COLS = 160  # colunas da grade — mais colunas = retrato mais nítido/detalhado
+CELL = 6  # tamanho de cada célula em px no SVG final
 MAX_RADIUS_RATIO = 0.48  # raio máximo do ponto, como fração da célula
 GAMMA = 1.9  # curva de resposta do raio em função da "tinta" (escuro=tinta) — mais alto = fundo claro desaparece mais rápido
 CUTOFF_RATIO = 0.33  # fração do raio máximo abaixo da qual o ponto é omitido (limpa ruído de fundo)
@@ -35,8 +35,18 @@ def load_luminance_grid(path: str, cols: int):
     y0 = max(0, int((h - side) * 0.06))
     im = im.crop((x0, y0, x0 + side, y0 + side))
 
-    im = im.resize((cols, cols), Image.LANCZOS)
-    gray = ImageOps.autocontrast(im.convert("L"), cutoff=1)
+    # nitidez + contraste local ainda na resolução original, antes de reduzir
+    # pra grade — realça bordas (olhos, óculos, barba) que o downscale sozinho
+    # borraria. A foto de origem (compressão de WhatsApp) já perde detalhe
+    # fino, então isso recupera parte do que dá pra recuperar.
+    gray_full = im.convert("L")
+    gray_full = ImageEnhance.Contrast(gray_full).enhance(1.15)
+    gray_full = gray_full.filter(
+        ImageFilter.UnsharpMask(radius=side / cols * 1.5, percent=180, threshold=2)
+    )
+
+    gray_small = gray_full.resize((cols, cols), Image.LANCZOS)
+    gray = ImageOps.autocontrast(gray_small, cutoff=1)
 
     grid = []
     px = gray.load()
