@@ -58,7 +58,7 @@
 <img src="https://streak-stats.demolab.com?user=jhonneweslley19-hub&theme=tokyonight&hide_border=true" />
 </div>
 
-> ℹ️ Os cards acima ficam completos assim que eu tiver repositórios públicos — hoje meus projetos estão em desenvolvimento privado.
+> ℹ️ Estatísticas ainda em construção — a maior parte dos meus projetos segue em desenvolvimento privado, aberto ao público conforme fica pronto pra demo.
 
 ---
 
@@ -69,7 +69,7 @@
 | **Swiftcod** | Landing page / marca para produtos de software sob medida | 🔒 Privado |
 | **Comparador de Preços** | Sistema de pesquisa e comparação de preços | 🔒 Privado |
 | **Sistema Financeiro (SaaS)** | Plataforma de gestão financeira | 🔒 Privado |
-| **Planograma** | Sistema de planograma para gestão de gôndolas/PDV | 🔒 Privado |
+| **[Planograma](https://github.com/jhonneweslley19-hub/PLANOGRAMAATUALIZADO)** | Sistema inteligente de planogramas com QR Code — Supabase (Postgres/Auth/Storage), RLS, CSP e scan de segredos no CI | 🌐 Público |
 | **Mellzinha** | Sistema de gestão com API própria | 🔒 Privado |
 
 <div align="center"><sub>Alguns repositórios ainda são privados — abro para o público conforme forem ficando prontos para demo.</sub></div>
