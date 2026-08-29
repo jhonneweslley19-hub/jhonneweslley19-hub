@@ -1,0 +1,40 @@
+name: Generate Dot-Matrix Portrait
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/photo-source.jpg"
+      - "scripts/dotify.py"
+  workflow_dispatch: {}
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Generate portrait SVGs
+        run: python3 scripts/dotify.py assets/photo-source.jpg --out-light assets/portrait.svg --out-dark assets/portrait-dark.svg
+
+      - name: Commit generated SVGs if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- assets/portrait.svg assets/portrait-dark.svg; then
+            git add assets/portrait.svg assets/portrait-dark.svg
+            git commit -m "chore: regenerate dot-matrix portrait"
+            git push
+          else
+            echo "Nada mudou no retrato gerado."
+          fi

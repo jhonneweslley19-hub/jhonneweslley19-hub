@@ -2,6 +2,12 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1120,100:1E3A8A&height=220&section=header&text=Jhonne%20Weslley&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Desenvolvedor%20de%20Software%20%7C%20Engenharia%20de%20Software&descAlignY=58&descSize=18" width="100%"/>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/portrait-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/portrait.svg" />
+  <img alt="Retrato em matriz de pontos" width="300" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/portrait.svg" />
+</picture>
+
 <a href="https://www.linkedin.com/in/jhonne-w-038b57127">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=560&lines=Constru%C3%ADndo+produtos+web+do+zero+ao+deploy;HTML+%2F+CSS+%2F+JavaScript+%2F+Python;Sempre+aprendendo+algo+novo+%F0%9F%9A%80" alt="Typing SVG" />
 </a>
