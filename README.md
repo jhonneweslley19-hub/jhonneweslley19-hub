@@ -16,6 +16,18 @@
 
 ---
 
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake.svg" />
+  <img alt="Snake eating the contribution graph" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake.svg" />
+</picture>
+
+</div>
+
+---
+
 ### 👋 Sobre mim
 
 - 💻 Desenvolvedor de Software, criando aplicações web do front ao back-end
