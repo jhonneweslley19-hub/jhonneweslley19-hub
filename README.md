@@ -37,8 +37,8 @@
 ### 👋 Sobre mim
 
 - 💻 Desenvolvedor de Software, criando aplicações web do front ao back-end
-- 🎓 Estudante de Engenharia de Software (Estácio)
-- 🏢 Trabalho com desenvolvimento na **Falcondat**
+- 🎓 Estudante de Engenharia de Software 
+- 🏢 Trabalho com desenvolvimento na **Swiftcod**
 - 📍 Juazeiro do Norte, CE — Brasil
 - 🌱 Focado em produtos completos: interface, automação e deploy
 - ⚡ Sempre com um projeto novo em andamento
