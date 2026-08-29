@@ -5,7 +5,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/portrait-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/portrait.svg" />
-  <img alt="Retrato em matriz de pontos" width="300" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/portrait.svg" />
+  <img alt="Retrato em matriz de pontos" width="340" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/portrait.svg" />
 </picture>
 
 <a href="https://www.linkedin.com/in/jhonne-w-038b57127">

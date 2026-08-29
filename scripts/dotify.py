@@ -12,10 +12,11 @@ import argparse
 import sys
 from PIL import Image, ImageOps
 
-GRID_COLS = 64  # colunas da grade (a imagem de entrada deve ser quadrada)
-CELL = 14  # tamanho de cada célula em px no SVG final
-MAX_RADIUS_RATIO = 0.46  # raio máximo do ponto, como fração da célula
+GRID_COLS = 130  # colunas da grade — mais colunas = retrato mais nítido/detalhado
+CELL = 7  # tamanho de cada célula em px no SVG final
+MAX_RADIUS_RATIO = 0.48  # raio máximo do ponto, como fração da célula
 GAMMA = 1.9  # curva de resposta do raio em função da "tinta" (escuro=tinta) — mais alto = fundo claro desaparece mais rápido
+CUTOFF_RATIO = 0.33  # fração do raio máximo abaixo da qual o ponto é omitido (limpa ruído de fundo)
 
 
 def load_luminance_grid(path: str, cols: int):
@@ -74,7 +75,7 @@ def build_svg(grid, dot_color: str, bg: str, reveal: bool) -> str:
         for x, v in enumerate(row):
             ink = 1.0 - v  # tom escuro da foto = mais "tinta" (ponto maior)
             r = max_r * (ink**GAMMA)
-            if r < 2.1:
+            if r < max_r * CUTOFF_RATIO:
                 continue
             cx = x * CELL + CELL / 2
             cy = y * CELL + CELL / 2
