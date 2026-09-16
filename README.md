@@ -24,6 +24,10 @@
   <img alt="Snake eating the contribution graph" width="100%" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake.svg" />
 </picture>
 
+<br/>
+
+<img alt="Gráfico real de contribuições" width="100%" src="https://ghchart.rshah.org/40c463/jhonneweslley19-hub" />
+
 </div>
 
 ---
