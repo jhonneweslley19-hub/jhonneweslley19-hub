@@ -18,22 +18,10 @@
 
 <div align="center">
 
-<sub>🐍 cobrinha comendo o gráfico de contribuições</sub>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake.svg" />
   <img alt="Snake eating the contribution graph" width="100%" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake.svg" />
-</picture>
-
-<br/>
-
-<sub>📅 contribuições reais (últimos 12 meses)</sub>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap.svg" />
-  <img alt="Heatmap real de contribuições" width="100%" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap.svg" />
 </picture>
 
 </div>
