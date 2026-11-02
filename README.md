@@ -26,7 +26,11 @@
 
 <br/>
 
-<img alt="Gráfico real de contribuições" width="100%" src="https://ghchart.rshah.org/40c463/jhonneweslley19-hub" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap.svg" />
+  <img alt="Heatmap real de contribuições" width="100%" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap.svg" />
+</picture>
 
 </div>
 

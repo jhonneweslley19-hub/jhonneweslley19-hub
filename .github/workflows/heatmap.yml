@@ -1,0 +1,43 @@
+name: Generate Contribution Heatmap
+
+on:
+  schedule:
+    - cron: "15 3 * * *" # todo dia às 03:15 UTC
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate heatmap SVGs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/contribution_heatmap.py \
+            --username ${{ github.repository_owner }} \
+            --out-light assets/contribution-heatmap.svg \
+            --out-dark assets/contribution-heatmap-dark.svg
+
+      - name: Commit generated SVGs if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- assets/contribution-heatmap.svg assets/contribution-heatmap-dark.svg; then
+            git add assets/contribution-heatmap.svg assets/contribution-heatmap-dark.svg
+            git commit -m "chore: regenerate contribution heatmap"
+            git push
+          else
+            echo "Nada mudou no heatmap."
+          fi
