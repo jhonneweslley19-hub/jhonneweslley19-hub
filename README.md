@@ -39,7 +39,7 @@
 ### 👋 Sobre mim
 
 - 🎓 Estudante de Engenharia de Software, 2º período
-- 💻 Aprendendo a programar na prática, com apoio de IA
+- 💻 Aprendendo a programar na prática
 - 📍 Juazeiro do Norte, CE — Brasil
 - 🌱 Ainda no início, construindo projetos pra aprender
 - ⚡ Sempre estudando algo novo
