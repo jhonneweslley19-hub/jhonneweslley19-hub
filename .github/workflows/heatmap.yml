@@ -34,8 +34,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- assets/contribution-heatmap.svg assets/contribution-heatmap-dark.svg; then
-            git add assets/contribution-heatmap.svg assets/contribution-heatmap-dark.svg
+          git add assets/contribution-heatmap.svg assets/contribution-heatmap-dark.svg
+          if ! git diff --cached --quiet; then
             git commit -m "chore: regenerate contribution heatmap"
             git push
           else
