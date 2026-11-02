@@ -105,6 +105,9 @@ def main():
 
     weeks = fetch_calendar(args.username, token)
 
+    for out_path in (args.out_light, args.out_dark):
+        os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
+
     with open(args.out_light, "w") as f:
         f.write(build_svg(weeks, LIGHT_LEVELS))
     with open(args.out_dark, "w") as f:
