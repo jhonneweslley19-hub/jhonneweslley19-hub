@@ -10,7 +10,6 @@ Uso:
         --out-dark assets/contribution-heatmap-dark.svg
 """
 import argparse
-import datetime
 import json
 import os
 import sys
@@ -21,10 +20,13 @@ GAP = 3
 PITCH = CELL + GAP
 MARGIN = 2
 
+# Sem from/to: a API usa o padrão dela, que é o mesmo que o GitHub mostra
+# na aba do ano corrente no perfil (janela rolante dos últimos 12 meses,
+# não o ano civil fixo — o ano civil só fica fixo depois que ele termina).
 QUERY = """
-query($login: String!, $from: DateTime!, $to: DateTime!) {
+query($login: String!) {
   user(login: $login) {
-    contributionsCollection(from: $from, to: $to) {
+    contributionsCollection {
       contributionCalendar {
         weeks {
           contributionDays {
@@ -44,17 +46,10 @@ LIGHT_LEVELS = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]
 DARK_LEVELS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
 
 
-def fetch_calendar(username: str, token: str, year: int):
-    from_date = f"{year}-01-01T00:00:00Z"
-    to_date = f"{year}-12-31T23:59:59Z"
+def fetch_calendar(username: str, token: str):
     req = urllib.request.Request(
         "https://api.github.com/graphql",
-        data=json.dumps(
-            {
-                "query": QUERY,
-                "variables": {"login": username, "from": from_date, "to": to_date},
-            }
-        ).encode(),
+        data=json.dumps({"query": QUERY, "variables": {"login": username}}).encode(),
         headers={
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json",
@@ -105,17 +100,13 @@ def main():
     parser.add_argument("--username", required=True)
     parser.add_argument("--out-light", required=True)
     parser.add_argument("--out-dark", required=True)
-    parser.add_argument(
-        "--year", type=int, default=datetime.date.today().year,
-        help="Ano civil a buscar (padrão: ano atual)",
-    )
     args = parser.parse_args()
 
     token = os.environ.get("GH_TOKEN")
     if not token:
         sys.exit("Defina a variável de ambiente GH_TOKEN com um token de leitura.")
 
-    weeks = fetch_calendar(args.username, token, args.year)
+    weeks = fetch_calendar(args.username, token)
 
     for out_path in (args.out_light, args.out_dark):
         os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
