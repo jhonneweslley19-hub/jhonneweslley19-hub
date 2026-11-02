@@ -24,6 +24,14 @@
   <img alt="Snake eating the contribution graph" width="100%" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/output/github-contribution-grid-snake.svg" />
 </picture>
 
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap.svg" />
+  <img alt="Heatmap real de contribuições" width="100%" src="https://raw.githubusercontent.com/jhonneweslley19-hub/jhonneweslley19-hub/main/assets/contribution-heatmap.svg" />
+</picture>
+
 </div>
 
 ---
